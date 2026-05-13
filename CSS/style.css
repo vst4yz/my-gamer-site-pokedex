@@ -1,0 +1,974 @@
+/* ============================================
+   CSS VARIABLES (Тёмная тема по умолчанию)
+   ============================================ */
+:root {
+  /* Основные фоны */
+  --bg-primary: #0a0f1a;
+  --bg-secondary: rgba(15, 20, 35, 0.9);
+  --bg-card: #151e2e;
+  --bg-card-hover: #1a2540;
+  --bg-input: #0a0f1a;
+  --bg-modal: linear-gradient(135deg, #0f1525 0%, #1a1040 100%);
+  --bg-header: rgba(15, 20, 35, 0.9);
+  --bg-footer: rgba(15, 20, 35, 0.9);
+  --bg-subscribe: rgba(20, 28, 50, 0.85);
+  --bg-pokedex: linear-gradient(135deg, #0f1525 25%, #1a0a35 100%);
+  --bg-wishlist: rgba(15, 15, 35, 0.6);
+  --bg-wishlist-item: #12152a;
+  --bg-wishlist-actions: #2a2a55;
+  --bg-filter: #12152a;
+
+  /* Тексты */
+  --text-primary: #c4e0f7;
+  --text-secondary: #e0eef7;
+  --text-heading: #b0d4f1;
+  --text-label: #d4a0e8;
+  --text-muted: #8899aa;
+  --text-footer: #99aacc;
+  --text-nav: #c080ff;
+  --text-nav-hover: #ffffff;
+  --text-h3-card: #d4a0e8;
+  --text-stat-label: #8899aa;
+  --text-empty: #7788aa;
+
+  /* Акцентные цвета */
+  --accent-blue: #80d8ff;
+  --accent-blue-bright: #40b8f0;
+  --accent-blue-dim: #60b0d8;
+  --accent-blue-glow: rgba(128, 216, 255, 0.3);
+  --accent-blue-bg: rgba(128, 216, 255, 0.1);
+  --accent-purple: #b070e8;
+  --accent-purple-deep: #8040c0;
+  --accent-purple-light: #d4a0f0;
+  --accent-pink: #e080d0;
+  --accent-pink-soft: #d4a0e8;
+  --accent-pink-hover: #a060b0;
+  --accent-pink-glow: rgba(224, 128, 208, 0.3);
+
+  /* Границы */
+  --border-primary: #1a2540;
+  --border-accent: #80d8ff;
+  --border-purple: #b070e8;
+  --border-pink: #e080d0;
+  --border-pink-dim: #a060b0;
+  --border-card: #1e2a45;
+  --border-hover: #d4a0e8;
+  --border-input: #b070e8;
+  --border-wishlist: #2a2a55;
+  --border-wishlist-hover: #80d8ff;
+  --border-subscribe: #e080d0;
+  --border-pokedex: #80d8ff;
+  --border-modal: #b070e8;
+  --border-nav-divider: #60b0d8;
+
+  /* Тени */
+  --shadow-card: rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: rgba(176, 112, 232, 0.25);
+  --shadow-pokedex: rgba(128, 216, 255, 0.25);
+  --shadow-btn-hover: rgba(128, 216, 255, 0.3);
+  --shadow-nav: rgba(192, 128, 255, 0.3);
+
+  /* Градиенты */
+  --gradient-btn-main: linear-gradient(135deg, #80d8ff 0%, #b070e8 50%, #d4a0f0 100%);
+  --gradient-btn-alt: linear-gradient(135deg, #a0c0f0 0%, #c080ff 50%, #e080d0 100%);
+  --gradient-btn-reset: linear-gradient(135deg, #d4a0f0 0%, #e080d0 100%);
+  --gradient-btn-search: linear-gradient(135deg, #60b0d8 0%, #b070e8 100%);
+  --gradient-btn-load: linear-gradient(135deg, #80d8ff 0%, #c080ff 100%);
+  --gradient-card-top: linear-gradient(90deg, #80d8ff, #b070e8, #d4a0f0);
+  --gradient-card-bg: linear-gradient(160deg, #151e2e 0%, #1a1040 100%);
+  --gradient-card-bg-hover: linear-gradient(160deg, #1a2540 0%, #2a1050 100%);
+  --gradient-modal: linear-gradient(135deg, #0f1525 0%, #1a1040 100%);
+  --gradient-header: linear-gradient(180deg, #0f1525 0%, #151e2e 100%);
+  --gradient-nav: linear-gradient(90deg, #c080ff, #80d8ff);
+  --gradient-subscribe-bg: linear-gradient(135deg, rgba(20, 28, 50, 0.9) 0%, rgba(30, 15, 60, 0.9) 100%);
+  --gradient-pokedex-bg: linear-gradient(135deg, #0f1525 0%, #1a0a35 50%, #0f1525 100%);
+  --gradient-form-btn: linear-gradient(135deg, #d4a0e8 0%, #e080d0 100%);
+  --gradient-form-btn-hover: linear-gradient(135deg, #b070e8 0%, #c080ff 100%);
+
+  /* Успех / Ошибка */
+  --success-bg: rgba(128, 216, 255, 0.1);
+  --success-color: #80d8ff;
+  --success-border: #60b0d8;
+  --error-bg: rgba(255, 80, 120, 0.1);
+  --error-color: #ff6088;
+  --error-border: #ff5070;
+}
+
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
+body.light-theme {
+  --bg-primary: #eef4fa;
+  --bg-secondary: rgba(210, 225, 240, 0.9);
+  --bg-card: #dde8f5;
+  --bg-card-hover: #c8d8ea;
+  --bg-input: #ffffff;
+  --bg-modal: linear-gradient(135deg, #dde8f5 0%, #e8d0f0 100%);
+  --bg-header: #d0e0f0;
+  --bg-footer: #d0e0f0;
+  --bg-subscribe: rgba(210, 225, 240, 0.85);
+  --bg-pokedex: linear-gradient(135deg, #d0e0f0 25%, #e0d0f0 100%);
+  --bg-wishlist: rgba(230, 235, 245, 0.8);
+  --bg-wishlist-item: #dde8f5;
+  --bg-wishlist-actions: #c8d8ea;
+  --bg-filter: #dde8f5;
+
+  --text-primary: #1a2a40;
+  --text-secondary: #2a3855;
+  --text-heading: #1a2a40;
+  --text-label: #7040a0;
+  --text-muted: #667788;
+  --text-footer: #3d5464;
+  --text-nav: #7040a0;
+  --text-nav-hover: #1a2a40;
+  --text-h3-card: #7040a0;
+  --text-stat-label: #667788;
+  --text-empty: #6677aa;
+
+  --accent-blue: #4090c0;
+  --accent-blue-bright: #3080b0;
+  --accent-blue-dim: #60a0c8;
+  --accent-blue-glow: rgba(64, 144, 192, 0.2);
+  --accent-blue-bg: rgba(64, 144, 192, 0.1);
+  --accent-purple: #8050c0;
+  --accent-purple-deep: #6030a0;
+  --accent-purple-light: #a070d0;
+  --accent-pink: #b060a0;
+  --accent-pink-soft: #a070b0;
+  --accent-pink-hover: #8050a0;
+  --accent-pink-glow: rgba(176, 96, 160, 0.2);
+
+  --border-primary: #b8c8d8;
+  --border-accent: #4090c0;
+  --border-purple: #8050c0;
+  --border-pink: #a070b0;
+  --border-pink-dim: #8050a0;
+  --border-card: #b8c8d8;
+  --border-hover: #8050c0;
+  --border-input: #8050c0;
+  --border-wishlist: #b8c8d8;
+  --border-wishlist-hover: #4090c0;
+  --border-subscribe: #a070b0;
+  --border-pokedex: #60a0c8;
+  --border-modal: #60a0c8;
+  --border-nav-divider: #8090a0;
+
+  --shadow-card: rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: rgba(128, 80, 192, 0.15);
+  --shadow-pokedex: rgba(64, 144, 192, 0.2);
+  --shadow-btn-hover: rgba(64, 144, 192, 0.25);
+  --shadow-nav: rgba(112, 64, 160, 0.2);
+
+  --gradient-btn-main: linear-gradient(135deg, #60a0c8 0%, #8050c0 50%, #a070b0 100%);
+  --gradient-btn-alt: linear-gradient(135deg, #80a8c8 0%, #9060b0 50%, #b070a0 100%);
+  --gradient-btn-reset: linear-gradient(135deg, #a070b0 0%, #b060a0 100%);
+  --gradient-btn-search: linear-gradient(135deg, #5090b8 0%, #8050c0 100%);
+  --gradient-btn-load: linear-gradient(135deg, #60a0c8 0%, #9060b0 100%);
+  --gradient-card-top: linear-gradient(90deg, #4090c0, #8050c0, #a070b0);
+  --gradient-card-bg: linear-gradient(160deg, #dde8f5 0%, #e8d0f0 100%);
+  --gradient-card-bg-hover: linear-gradient(160deg, #c8d8ea 0%, #d8c0e0 100%);
+  --gradient-modal: linear-gradient(135deg, #dde8f5 0%, #e8d0f0 100%);
+  --gradient-header: linear-gradient(180deg, #d0e0f0 0%, #dde8f5 100%);
+  --gradient-nav: linear-gradient(90deg, #7040a0, #4090c0);
+  --gradient-subscribe-bg: linear-gradient(135deg, rgba(210, 225, 240, 0.9) 0%, rgba(230, 210, 245, 0.9) 100%);
+  --gradient-pokedex-bg: linear-gradient(135deg, #d0e0f0 0%, #e0d0f0 50%, #d0e0f0 100%);
+  --gradient-form-btn: linear-gradient(135deg, #a070b0 0%, #b060a0 100%);
+  --gradient-form-btn-hover: linear-gradient(135deg, #8050c0 0%, #9060b0 100%);
+
+  --success-bg: rgba(64, 144, 192, 0.1);
+  --success-color: #4090c0;
+  --success-border: #3080b0;
+  --error-bg: rgba(255, 80, 120, 0.08);
+  --error-color: #cc4060;
+  --error-border: #cc4060;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+  padding: 20px;
+  min-height: 60vh;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+header {
+  background: var(--gradient-header);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--border-purple);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-block;
+  color: var(--text-nav);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 8px 22px;
+  border-radius: 25px;
+  border: 2px solid var(--border-purple);
+  background: var(--accent-blue-bg);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Разделитель между кнопками — убираем */
+nav a::before,
+nav a::after {
+  content: none;
+}
+
+nav a:hover {
+  color: var(--text-nav-hover);
+  background: var(--gradient-btn-search);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 15px var(--accent-blue-glow), 0 0 30px var(--accent-pink-glow);
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+nav a:active {
+  transform: translateY(0);
+  box-shadow: 0 0 8px var(--accent-blue-glow);
+}
+
+/* Анимация свечения при наведении */
+nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(128, 216, 255, 0.15), transparent);
+  transition: left 0.5s;
+}
+
+nav a:hover::before {
+  left: 100%;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: var(--accent-blue-bg);
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  font-size: 1.5em;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.menu-toggle:hover {
+  background: var(--accent-blue-glow);
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--bg-footer);
+  padding: 15px;
+  text-align: center;
+  color: var(--text-footer);
+  font-size: 0.9em;
+  border-top: 1px solid var(--border-purple);
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.member-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--shadow-card);
+  transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 20px var(--shadow-card-hover);
+}
+
+.member-card h3 {
+  color: var(--text-h3-card);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.member-card p {
+  color: var(--text-primary);
+  font-size: 0.95em;
+}
+
+/* ============================================
+   SUBSCRIBE / NEWS FORM
+   ============================================ */
+.subscribe {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  background: var(--gradient-subscribe-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-pink);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe h2 {
+  color: var(--text-heading);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.subscribe p {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+#newsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#newsForm label {
+  font-weight: bold;
+  color: var(--text-label);
+}
+
+#newsForm input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background-color: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#newsForm input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 8px var(--accent-blue-glow);
+}
+
+#newsForm button {
+  padding: 12px;
+  background: var(--gradient-form-btn);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#newsForm button:hover {
+  background: var(--gradient-form-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--accent-pink-glow);
+}
+
+#message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+.success {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  border: 1px solid var(--success-border);
+}
+
+.error {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+}
+
+/* ============================================
+   POKEDEX SECTION
+   ============================================ */
+.live-data {
+  margin: 40px 0;
+  padding: 25px;
+  background: var(--gradient-pokedex-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-pokedex);
+}
+
+.live-data h2 {
+  color: var(--text-heading);
+  margin-top: 0;
+}
+
+.live-data p {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: var(--bg-input);
+  border: 2px solid var(--accent-blue-dim);
+  color: var(--text-secondary);
+  border-radius: 30px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box button {
+  padding: 12px 24px;
+  background: var(--gradient-btn-search);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#loadMoreBtn {
+  padding: 12px 24px;
+  background: var(--gradient-btn-load);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#resetBtn {
+  padding: 12px 24px;
+  background: var(--gradient-btn-reset);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-box button:hover,
+#loadMoreBtn:hover,
+#resetBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow-btn-hover);
+}
+
+/* Pokedex grid */
+.pokedex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.pokemon-card {
+  background: var(--gradient-card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-card-top);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--accent-blue);
+  box-shadow: 0 15px 30px var(--shadow-pokedex);
+  background: var(--gradient-card-bg-hover);
+}
+
+.pokemon-card:hover::before {
+  opacity: 1;
+}
+
+.pokemon-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.5s;
+}
+
+.pokemon-card:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.pokemon-card h3 {
+  color: var(--accent-blue);
+  margin: 10px 0 5px 0;
+  font-size: 1.3em;
+  text-transform: capitalize;
+}
+
+.pokemon-id {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-blue-bg);
+  color: var(--accent-blue);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* Type badges */
+.types {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.type-badge {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-electric { background-color: #F8D030; }
+.type-grass { background-color: #78C850; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-dark { background-color: #705848; }
+.type-steel { background-color: #B8B8D0; }
+.type-fairy { background-color: #EE99AC; }
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--accent-blue);
+}
+
+.stat-label {
+  font-size: 0.7em;
+  color: var(--text-stat-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pagination-info {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--accent-blue);
+  font-size: 1.2em;
+  grid-column: 1 / -1;
+}
+
+.error-msg {
+  text-align: center;
+  padding: 40px;
+  color: var(--accent-purple-light);
+  font-size: 1.1em;
+  grid-column: 1 / -1;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--gradient-modal);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  border: 2px solid var(--border-modal);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--accent-blue);
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close-modal:hover {
+  color: var(--error-color);
+}
+
+/* ============================================
+   WISHLIST SECTION
+   ============================================ */
+.wishlist {
+  margin: 40px 0;
+  padding: 25px;
+  background-color: var(--bg-wishlist);
+  border-radius: 15px;
+  border: 1px solid var(--border-wishlist);
+}
+
+.wishlist h2 {
+  color: var(--text-heading);
+  margin-top: 0;
+}
+
+.add-game-form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.add-game-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-wishlist);
+  color: var(--text-secondary);
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.add-game-form input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+.add-game-form button {
+  padding: 12px 24px;
+  background: var(--gradient-btn-search);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.add-game-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--accent-blue-glow);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background-color: var(--bg-filter);
+  border: 1px solid var(--border-wishlist);
+  color: var(--text-muted);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background: var(--gradient-btn-search);
+  color: #ffffff;
+  border-color: var(--accent-blue);
+}
+
+.wishlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wishlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--bg-wishlist-item);
+  border: 1px solid var(--border-wishlist);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.wishlist-item:hover {
+  border-color: var(--border-wishlist-hover);
+  transform: translateX(5px);
+}
+
+.wishlist-item.high-priority {
+  border-left: 5px solid #ff5555;
+}
+
+.wishlist-item.low-priority {
+  border-left: 5px solid #55ff55;
+}
+
+.item-info h4 {
+  margin: 0 0 5px 0;
+  color: var(--text-secondary);
+}
+
+.item-info .priority {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: var(--border-wishlist);
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+.item-actions button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: transparent;
+  border: 1px solid #555;
+  color: var(--text-muted);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.item-actions button:hover {
+  background-color: #ff5555;
+  color: white;
+  border-color: #ff5555;
+}
+
+.wishlist-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.wishlist-actions button {
+  padding: 10px 20px;
+  background-color: var(--bg-wishlist-actions);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.wishlist-actions button:hover {
+  background-color: #3a3a66;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-empty);
+  font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE / MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .member-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 5px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a:not(:last-child)::after {
+    content: '';
+    margin: 0;
+  }
+
+  nav a:hover {
+    background-color: var(--accent-blue-bg);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+}
